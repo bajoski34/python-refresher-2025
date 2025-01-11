@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import httpx
+from pprint import pprint
+
+# request to Google.com
+r = httpx.get('https://google.com')
+pprint(r.text)
+pprint(r.content)
+
+from PIL import Image
+from io import BytesIO
+
+# request to get Github Account Image
+r = httpx.get('https://avatars.githubusercontent.com/u/39011309?v=4')
+i = Image.open(BytesIO(r.content))
+
+print(i.show()) # opens native image viewer.
+
