@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+import sys
+import os
+import math
+import datetime
+import random
+import re
+import argparse
+import base64
+import calendar
+import warnings
+
+# TODO: built in modules : https://docs.python.org/3/py-modindex.html
+
+def main():
+    # TODO: How to handle iterators.
+    pass
+
+if __name__ == '__main__':
+    def fxn():
+        warnings.warn("deprecated", DeprecationWarning)
+
+    with warnings.catch_warnings(record=True) as w:
+        # Cause all warnings to always be triggered.
+        warnings.simplefilter("always")
+        # Trigger a warning.
+        fxn()
+        warnings.warn("Jesus is King")
+        # Verify some things
+        assert len(w) == 1
+        assert issubclass(w[-1].category, DeprecationWarning)
+        assert "deprecated" in str(w[-1].message)

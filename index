@@ -30,8 +30,18 @@ partialGroceries = newGroceries[:3]
 print(partialGroceries)
 print(foods[:])
 
+print(f"reference of foods list: {id(foods)}")
+
+print(f"size of a food list : {foods.__sizeof__()} bytes")
+
 import pandas as pd
 df = pd.DataFrame(columns=['foods','position'])
 index = range(0, len(foods))
 df['foods'],df['position'] = foods, index
 print(df)
+
+# Sets
+
+mySet = {1,2,4,6,6,10,22,4, 8}
+mySet.update({3,5,6})
+print(mySet)
